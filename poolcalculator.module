@@ -2,7 +2,7 @@
 
 function poolcalculator_permission() {
   return array(
-    'access pool calculator admin' => array(
+    'Access pool calculator admin' => array(
       'title' => t('Access Pool Calculator Admin'),
       'description' => t('Access the Pool Calculator Admin section'),
     ),
@@ -15,14 +15,21 @@ function poolcalculator_menu() {
 		'title' => 'Run EuroPool Stats',
 		'description' => 'Calculates the pool stats given the latest config',
   	'page callback' => 'poolcalculator_runstats',
-		'access arguments' => array('access pool calculator admin'),
+		'access arguments' => array('Access pool calculator admin'),
+	);
+
+	$items['standings'] = array(
+		'title' => 'STANDINGS',
+		'description' => 'Shows the current standings',
+  	'page callback' => 'poolcalculator_showStandings',
+		'access arguments' => array('View published content'),
 	);
 
 	$items['admin/pool/debug'] = array(
 		'title' => 'DEBUG EuroPool Stats',
 		'description' => 'Pool Stats Debug',
   	'page callback' => 'poolcalculator_debug',
-		'access arguments' => array('access pool calculator admin'),
+		'access arguments' => array('Access pool calculator admin'),
 	);
 
 	return $items;
@@ -53,6 +60,16 @@ function poolcalculator_debug() {
 	return;	
 }
 
+function poolcalculator_showStandings() {
+
+	$standings = poolcalculator_runstats();
+	
+	$out .= '<h3>'.LAST_UPDATE.'</h3>';
+	$out .= $standings;
+	return $out;
+
+}
+
 function poolcalculator_runstats() {
 
 	module_load_include('inc', 'poolcalculator', 'poolcalculator.stats');
@@ -71,21 +88,18 @@ function poolcalculator_runstats() {
 }
 
 function poolcalculator_calcEntryPoints($entry) {
+
 	$selections = poolcalculator_getEntrySelections($entry);
 	$table = array();
 	$selection_total_pts = 0;
 	
 	foreach($selections as $key => $val) {
-		$teampts = array();
-		$teampts[] = $val;
-		$teampts[] = poolcalculator_getTeamWins(constant($val));
-		$teampts[] = poolcalculator_getTeamDraws_NumORPoints(constant($val));
-		$teampts[] = poolcalculator_getTeamBonusPoints(constant($val));
-		$tot = poolcalculator_getTeamTotalPoints(constant($val));
-		$teampts[] = $tot;
-		$selection_total_pts += $tot;
-		
-		$table[] = $teampts;
+		$pts = array();
+
+		if(substr($key, 0, 1) === 'T') poolcalculator_calcEntryPointsTeam($key, $val, $pts, $selection_total_pts);
+		elseif(substr($key, 0, 1) === 'P') poolcalculator_calcEntryPointsPlayer($key, $val, $pts, $selection_total_pts);
+
+		$table[] = $pts;
 	}
 	
 	$table['link'] = 'node/'.$entry->nid;
@@ -94,29 +108,68 @@ function poolcalculator_calcEntryPoints($entry) {
 	return $table;	
 }
 
+function poolcalculator_calcEntryPointsTeam($key, $val, &$pts, &$selection_total_pts) {
+
+	$pts[] = $key;
+	$pts[] = $val;
+	$pts[] = poolcalculator_getTeamWins(constant($val));
+	$pts[] = poolcalculator_getTeamDraws_NumORPoints(constant($val));
+	$pts[] = poolcalculator_getTeamBonusPoints(constant($val));
+	$tot = poolcalculator_getTeamTotalPoints(constant($val));
+	$pts[] = $tot;
+	$selection_total_pts += $tot;
+}
+
+function poolcalculator_calcEntryPointsPlayer($key, $val, &$pts, &$selection_total_pts) {
+
+	$pts[] = $key;
+	$pts[] = $val;
+	$pts[] = poolcalculator_getPlayerGoals(constant($val));
+	$pts[] = poolcalculator_getPlayerBonusPoints(constant($val));
+	$tot = poolcalculator_getPlayerTotalPoints(constant($val));
+	$pts[] = $tot;
+	$selection_total_pts += $tot;
+}
+
 function poolcalculator_getEntrySelections($entry) {
+
 	$selections = array();
-	$selections['t1'] = $entry->field_team_1['und'][0]['value'];
-	$selections['t2'] = $entry->field_team_2['und'][0]['value'];
+
+	for($i=1; $i<=TEAM_POTS; $i++) {
+		$field_name = "field_team_$i";
+		$x = &$entry->$field_name;
+		$selections["T$i"] = $x['und'][0]['value'];
+	}
+
+	for($j=1; $j<=PLAYER_POTS; $j++) {
+		$field_name = "field_player_$j";
+		$y = &$entry->$field_name;
+		$selections["P$j"] = $y['und'][0]['value'];
+	}
+
 	return $selections;
 }
 
 function poolcalculator_formatResults($stats, $rank) {
 
 	$out = '';
-
 	foreach($rank as $team_name => $tot) {
-	
-		
-		$out .= '<div>'.$team_name.' : '.$tot.' : '.l('See Team', $stats[$team_name]['link']).'</div>';
-			
-		foreach($stats[$team_name] as $i => $arr) {
-			if(is_numeric($i))
-				$out .= '<div>SEL: '.$arr[0].' WINS: '.$arr[1].'DRAWS: '.$arr[2].'BONUS: '.$arr[3].'TEAM TOT:'.$arr[4].'</div>';
-		}
 
-	
-	}
+		$out .= '<div><table class="pool"><th>'.l($team_name, $stats[$team_name]['link']).'</th><th><strong>POINTS: '.$tot.'</strong></th></table>';
+		$out .= '<table><tr><th>GROUP</th><th>PICK</th><th>WINS/GOALS</th><th>DRAWS</th><th>BONUS</th><th>PTS</th></tr>';	
+
+		foreach($stats[$team_name] as $i => $arr) {
+			if(is_numeric($i)) {
+				$out .= '<tr>';
+				if(substr($arr[0], 0, 1) === 'P') {
+				  array_splice($arr, 3, 0, '-');
+				}
+				foreach($arr as $vals) $out .= '<td>'.$vals.'</td>';
+				$out .= '</tr>';
+			}
+		}		
+		$out .= '</table></div>';
+	}	
 	return $out;
 }
 
@@ -131,23 +184,44 @@ function poolcalculator_loadAllTeams() {
   return node_load_multiple($nids);
 }
 
+
+
+function poolcalculator_getPlayerGoals($player) {
+	$ply_array = poolcalculator_getSelectionArray($player);
+	return $ply_array[0];
+}
+
+function poolcalculator_getPlayerBonusPoints($player) {
+	$ply_array = poolcalculator_getSelectionArray($player);
+	return $ply_array[1];
+}
+
+function poolcalculator_getPlayerGoalPoints($player) {
+	$ply_array = poolcalculator_getSelectionArray($player);
+	return $ply_array[0]*2;
+}
+
+function poolcalculator_getPlayerTotalPoints($player) {
+  return poolcalculator_getPlayerGoalPoints($player) + poolcalculator_getPlayerBonusPoints($player);
+}
+
 function poolcalculator_getTeamWins($team) {
-	$team_array = poolcalculator_getTeamArray($team);
+	$team_array = poolcalculator_getSelectionArray($team);
 	return $team_array[0];
 }
 
 function poolcalculator_getTeamDraws_NumORPoints($team) {
-	$team_array = poolcalculator_getTeamArray($team);
+	$team_array = poolcalculator_getSelectionArray($team);
 	return $team_array[1];
 }
 
 function poolcalculator_getTeamWinPoints($team) {
-	$team_array = poolcalculator_getTeamArray($team);
+	$team_array = poolcalculator_getSelectionArray($team);
 	return $team_array[0]*3;
 }
 
 function poolcalculator_getTeamBonusPoints($team) {
-	$team_array = poolcalculator_getTeamArray($team);
+	$team_array = poolcalculator_getSelectionArray($team);
 	return $team_array[2]*3;
 }
 
@@ -155,6 +229,6 @@ function poolcalculator_getTeamTotalPoints($team) {
 	return poolcalculator_getTeamWinPoints($team) + poolcalculator_getTeamDraws_NumORPoints($team) + poolcalculator_getTeamBonusPoints($team);
 }
 
-function poolcalculator_getTeamArray($team) {
+function poolcalculator_getSelectionArray($team) {
 	return unserialize($team);
 }
