@@ -32,7 +32,36 @@ function poolcalculator_menu() {
 		'access arguments' => array('Access pool calculator admin'),
 	);
 
+
+	$items['pool/info'] = array(
+		'title' => 'Welcome',
+		'description' => 'Instructions and Rules',
+  	'page callback' => 'poolcalculator_info',
+		'access arguments' => array('View published content'),
+	);
+
 	return $items;
+
+}
+
+function poolcalculator_info() {
+
+	$out = '<p>You need a login to get started. If you didn\'t get an email with login info, let me know. If you want to invite anyone else into the pool then send me their email address.</p>';
+
+	$out .= '<h3>Easier to Remember Site Link</h3>';
+	$out .= '<a href="http://bit.ly/europool2016">http://bit.ly/europool2016</a>';
+
+	$out .= '<h3>Rules</h3>';
+	$out .= '<ul><li>Max 3 entries allowed per person</li>';
+	$out .= '<li>$10 per entry</li>';
+	$out .= '<li>Payout will depend on number of entries. Either winner-take-all, or will pay 2nd place if pot is over $100.</li></ul>';
+	
+	$out .= '<h3>Instructions</h3>';
+	$out .= '<ul><li>Login</li>';
+	$out .= '<li>Click "Add Content", and fill out form.</li>';
+	$out .= '<li>Check this site for standings</li>';
+		
+	return $out;
 
 }
 
