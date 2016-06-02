@@ -1,11 +1,9 @@
 (function ($) {
 	
 	$(document).ready(function () {
-	
-		$(".standings").click(function() {
-			$(this).toggleClass('closed open');
+		$(".standings-head").click(function() {
+			$(this).parent().toggleClass('closed open');
 		});	
-
 	});
 
 })(jQuery);

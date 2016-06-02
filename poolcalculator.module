@@ -248,7 +248,7 @@ function poolcalculator_formatResults($stats, $rank) {
 	$out = '';
 	foreach($rank as $team_name => $tot) {
 
-		$out .= '<div class="standings closed"><div class="standings-head"><table class="pool"><th>'.$team_name.'</th><th><strong>POINTS: '.$tot.'</strong></th><th>'.$stats[$team_name]['owner'].'</th></table></div>';
+		$out .= '<div class="standings closed"><div class="standings-head"><table class="pool"><th><span class="head-plus">+</span><span class="head-minus">-</span>'.$team_name.'</th><th><strong>POINTS: '.$tot.'</strong></th><th>'.$stats[$team_name]['owner'].'</th></table></div>';
 		$out .= '<div class="standings-grid"><table><tr><th>GROUP</th><th>PICK</th><th>WINS/GOALS</th><th>DRAWS</th><th>BONUS</th><th>PTS</th></tr>';	
 
 		foreach($stats[$team_name] as $i => $arr) {
@@ -272,7 +272,7 @@ function poolcalculator_formatCellContent($name) {
 	if(defined($check)) return constant($check);
 
 	elseif((strlen($name)==2) && (substr($name, 0, 1) === 'T')) {
-			return l($name, '/teamgroup/'.$name);
+			return l($name, '/teamgroup/'.$name, array('attributes' => array('class' => 'grid-link', 'target' => '_blank')));
 	}
 	elseif((strlen($name)==2) && (substr($name, 0, 1) === 'P')) {
 			return l($name, '/playergroup/'.$name);

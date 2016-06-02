@@ -3,9 +3,29 @@ table.pool {
 	margin-bottom: 0px !important;
 }
 
+div.standings-grid {
+	padding-left: 10px;
+	padding-right: 10px;
+}
 div.standings.closed div.standings-grid {
 	display: none;
 }
 div.standings.open div.standings-grid {
 	display: block;
+}
+
+div.standings span {
+	margin-right: 10px;
+}
+div.standings.open span.head-plus {
+	display: none;
+}
+div.standings.closed span.head-plus {
+	display: inline;
+}
+div.standings.open span.head-minus {
+	display: inline;
+}
+div.standings.closed span.head-minus {
+	display: none;
 }
