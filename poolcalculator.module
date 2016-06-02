@@ -22,7 +22,7 @@ function poolcalculator_menu() {
 		'title' => 'STANDINGS',
 		'description' => 'Shows the current standings',
   	'page callback' => 'poolcalculator_showStandings',
-		'access arguments' => array('access content'),
+		'access callback' => true,
 	);
 
 	$items['admin/pool/debug'] = array(
@@ -37,7 +37,7 @@ function poolcalculator_menu() {
 		'title' => 'Welcome',
 		'description' => 'Instructions and Rules',
   	'page callback' => 'poolcalculator_info',
-		'access arguments' => array('View published content'),
+		'access callback' => true,
 	);
 
 	return $items;
