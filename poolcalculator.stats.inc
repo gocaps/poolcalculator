@@ -92,89 +92,88 @@ define('ALBANIA_DRAWS', 0);
 define('ALBANIA_BNS', 0);
 
 #PLAYER 1
-define('DAVE_GOALS', 0);
-define('DAVE_BNS', 0);
-define('JOHN_GOALS', 0);
-define('JOHN_BNS', 0);
-define('BILL_GOALS', 0);
-define('BILL_BNS', 0);
+define('MULLER_GOALS', 0);
+define('MULLER_BNS', 0);
+define('RONALDO_GOALS', 0);
+define('RONALDO_BNS', 0);
+define('GRIEZMANN_GOALS', 0);
+define('GRIEZMANN_BNS', 0);
 
 #PLAYER 2
-define('JEFF_GOALS', 0);
-define('JEFF_BNS', 0);
-define('MARK_GOALS', 0);
-define('MARK_BNS', 0);
-define('GREG_GOALS', 0);
-define('GREG_BNS', 0);
+define('GIROUD_GOALS', 0);
+define('GIROUD_BNS', 0);
+define('LEWANDOWSKI_GOALS', 0);
+define('LEWANDOWSKI_BNS', 0);
+define('KANE_GOALS', 0);
+define('KANE_BNS', 0);
 
-/*
 #PLAYER 3
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
+define('LUKAKU_GOALS', 0);
+define('LUKAKU_BNS', 0);
+define('MARTIAL_GOALS', 0);
+define('MARTIAL_BNS', 0);
+define('MORATA_GOALS', 0);
+define('MORATA_BNS', 0);
+define('IBRAHIMOVIC_GOALS', 0);
+define('IBRAHIMOVIC_BNS', 0);
 
 #PLAYER 4
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
+define('PELLE_GOALS', 0);
+define('PELLE_BNS', 0);
+define('GOTZE_GOALS', 0);
+define('GOTZE_BNS', 0);
+define('VARDY_GOALS', 0);
+define('VARDY_BNS', 0);
+define('ADURIZ_GOALS', 0);
+define('ADURIZ_BNS', 0);
 
 #PLAYER 5
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
+define('HAZARD_GOALS', 0);
+define('HAZARD_BNS', 0);
+define('GIGNAC_GOALS', 0);
+define('GIGNAC_BNS', 0);
+define('STURRIDGE_GOALS', 0);
+define('STURRIDGE_BNS', 0);
+define('MANDZUKIC_GOALS', 0);
+define('MANDZUKIC_BNS', 0);
 
 #PLAYER 6
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
+define('GOMEZ_GOALS', 0);
+define('GOMEZ_BNS', 0);
+define('ROONEY_GOALS', 0);
+define('ROONEY_BNS', 0);
+define('BRUYNE_GOALS', 0);
+define('BRUYNE_BNS', 0);
+define('BALE_GOALS', 0);
+define('BALE_BNS', 0);
 
 #PLAYER 7
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
+define('ZAZA_GOALS', 0);
+define('ZAZA_BNS', 0);
+define('DZYUBA_GOALS', 0);
+define('DZYUBA_BNS', 0);
+define('SHAQIRI_GOALS', 0);
+define('SHAQIRI_BNS', 0);
+define('JANKO_GOALS', 0);
+define('JANKO_BNS', 0);
 
 #PLAYER 8
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
+define('KOKORIN_GOALS', 0);
+define('KOKORIN_BNS', 0);
+define('YARMOLENKO_GOALS', 0);
+define('YARMOLENKO_BNS', 0);
+define('YILMAZ_GOALS', 0);
+define('YILMAZ_BNS', 0);
 
 #PLAYER 9
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
-define('_GOALS', 0);
-define('_BNS', 0);
+define('NECID_GOALS', 0);
+define('NECID_BNS', 0);
+define('HAMSIK_GOALS', 0);
+define('HAMSIK_BNS', 0);
+define('BJARNASON_GOALS', 0);
+define('BJARNASON_BNS', 0);
 
-*/
+
 
 define('FRANCE', serialize(array(FRANCE_WINS, FRANCE_DRAWS, FRANCE_BNS)));
 define('GERMANY', serialize(array(GERMANY_WINS, GERMANY_DRAWS, GERMANY_BNS)));
@@ -201,11 +200,35 @@ define('HUNGARY', serialize(array(HUNGARY_WINS, HUNGARY_DRAWS, HUNGARY_BNS)));
 define('NORTHERN', serialize(array(NORTHERN_WINS, NORTHERN_DRAWS, NORTHERN_BNS)));
 define('ALBANIA', serialize(array(ALBANIA_WINS, ALBANIA_DRAWS, ALBANIA_BNS)));
 
-
-define('DAVE', serialize(array(DAVE_GOALS, DAVE_BNS)));
-define('JOHN', serialize(array(JOHN_GOALS, JOHN_BNS)));
-define('BILL', serialize(array(BILL_GOALS, BILL_BNS)));
-define('JEFF', serialize(array(JEFF_GOALS, JEFF_BNS)));
-define('MARK', serialize(array(MARK_GOALS, MARK_BNS)));
-define('GREG', serialize(array(GREG_GOALS, GREG_BNS)));
-
+define('MULLER', serialize(array(MULLER_GOALS, MULLER_BNS)));
+define('RONALDO', serialize(array(RONALDO_GOALS, RONALDO_BNS)));
+define('GRIEZMANN', serialize(array(GRIEZMANN_GOALS, GRIEZMANN_BNS)));
+define('GIROUD', serialize(array(GIROUD_GOALS, GIROUD_BNS)));
+define('LEWANDOWSKI', serialize(array(LEWANDOWSKI_GOALS, LEWANDOWSKI_BNS)));
+define('KANE', serialize(array(KANE_GOALS, KANE_BNS)));
+define('LUKAKU', serialize(array(LUKAKU_GOALS, LUKAKU_BNS)));
+define('MARTIAL', serialize(array(MARTIAL_GOALS, MARTIAL_BNS)));
+define('MORATA', serialize(array(MORATA_GOALS, MORATA_BNS)));
+define('IBRAHIMOVIC', serialize(array(IBRAHIMOVIC_GOALS, IBRAHIMOVIC_BNS)));
+define('PELLE', serialize(array(PELLE_GOALS, PELLE_BNS)));
+define('GOTZE', serialize(array(GOTZE_GOALS, GOTZE_BNS)));
+define('VARDY', serialize(array(VARDY_GOALS, VARDY_BNS)));
+define('ADURIZ', serialize(array(ADURIZ_GOALS, ADURIZ_BNS)));
+define('HAZARD', serialize(array(HAZARD_GOALS, HAZARD_BNS)));
+define('GIGNAC', serialize(array(GIGNAC_GOALS, GIGNAC_BNS)));
+define('STURRIDGE', serialize(array(STURRIDGE_GOALS, STURRIDGE_BNS)));
+define('MANDZUKIC', serialize(array(MANDZUKIC_GOALS, MANDZUKIC_BNS)));
+define('GOMEZ', serialize(array(GOMEZ_GOALS, GOMEZ_BNS)));
+define('ROONEY', serialize(array(ROONEY_GOALS, ROONEY_BNS)));
+define('BRUYNE', serialize(array(BRUYNE_GOALS, BRUYNE_BNS)));
+define('BALE', serialize(array(BALE_GOALS, BALE_BNS)));
+define('ZAZA', serialize(array(ZAZA_GOALS, ZAZA_BNS)));
+define('DZYUBA', serialize(array(DZYUBA_GOALS, DZYUBA_BNS)));
+define('SHAQIRI', serialize(array(SHAQIRI_GOALS, SHAQIRI_BNS)));
+define('JANKO', serialize(array(JANKO_GOALS, JANKO_BNS)));
+define('KOKORIN', serialize(array(KOKORIN_GOALS, KOKORIN_BNS)));
+define('YARMOLENKO', serialize(array(YARMOLENKO_GOALS, YARMOLENKO_BNS)));
+define('YILMAZ', serialize(array(YILMAZ_GOALS, YILMAZ_BNS)));
+define('NECID', serialize(array(NECID_GOALS, NECID_BNS)));
+define('HAMSIK', serialize(array(HAMSIK_GOALS, HAMSIK_BNS)));
+define('BJARNASON', serialize(array(BJARNASON_GOALS, BJARNASON_BNS)));
