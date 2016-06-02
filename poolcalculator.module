@@ -197,13 +197,26 @@ function poolcalculator_formatResults($stats, $rank) {
 				if(substr($arr[0], 0, 1) === 'P') {
 				  array_splice($arr, 3, 0, '-');
 				}
-				foreach($arr as $vals) $out .= '<td>'.$vals.'</td>';
+				foreach($arr as $vals) $out .= '<td>'.poolcalculator_formatTeamName($vals).'</td>';
 				$out .= '</tr>';
 			}
 		}		
 		$out .= '</table></div>';
 	}	
 	return $out;
+}
+
+function poolcalculator_formatTeamName($name) {
+
+	switch($name) {
+	
+		case 'NORTHERN': return 'N. IRELAND';
+
+		default: return $name;	
+	}
+	
+
+
 }
 
 function poolcalculator_loadAllTeams() {
