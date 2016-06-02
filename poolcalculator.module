@@ -65,7 +65,7 @@ function poolcalculator_teamGroupStandings($gid) {
 	$out = '<div><table><th>PICK</th><th>WINS</th><th>DRAWS</th><th>BONUS</th><th>POINTS</th>';
 
 	foreach($group as $i => $g) {
-		$out .= '<tr><td>'.$g.'</td>';
+		$out .= '<tr><td>'.poolcalculator_formatCellContent($g).'</td>';
 		$out .= '<td>'.poolcalculator_getTeamWins(constant($g)).'</td>';
 		$out .= '<td>'.poolcalculator_getTeamDraws_NumORPoints(constant($g)).'</td>';
 		$out .= '<td>'.poolcalculator_getTeamBonusPoints(constant($g)).'</td>';
