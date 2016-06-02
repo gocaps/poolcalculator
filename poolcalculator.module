@@ -208,11 +208,9 @@ function poolcalculator_formatResults($stats, $rank) {
 
 function poolcalculator_formatTeamName($name) {
 
-	if($name === 'NORTHERN') return 'N. IRELAND';
-	elseif($name === 'REPUBLIC') return 'REP IRELAND';
-	elseif($name === 'CZECH') return 'CZECH REP';
-	elseif($name === 'BRUYNE') return 'De BRUYNE';
-	return $name;	
+	$check = $name.'_FORMATTED';
+	if(defined($check)) return constant($check);
+	return $name;
 }
 
 function poolcalculator_loadAllTeams() {

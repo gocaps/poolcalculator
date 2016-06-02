@@ -5,6 +5,11 @@ define('LAST_UPDATE', 'No updates yet... tourney hasn\'t started...');
 define('TEAM_POTS', 7);
 define('PLAYER_POTS', 9);
 
+define('NORTHERN_FORMATTED', 'N IRELAND');
+define('REPUBLIC_FORMATTED', 'REP IRELAND');
+define('CZECH_FORMATTED', 'CZECH REP');
+define('BRUYNE_FORMATTED', 'DE BRUYNE');
+
 # TEAM 1
 define('FRANCE_WINS', 0);
 define('FRANCE_DRAWS', 0);
