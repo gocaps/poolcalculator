@@ -11,15 +11,15 @@ define('CZECH_FORMATTED', 'CZECH REP');
 define('BRUYNE_FORMATTED', 'DE BRUYNE');
 
 # TEAM 1
-define('FRANCE_WINS', 0);
-define('FRANCE_DRAWS', 0);
+define('FRANCE_WINS', 1);
+define('FRANCE_DRAWS', 2);
 define('FRANCE_BNS', 0);
-define('GERMANY_WINS', 0);
+define('GERMANY_WINS', 2);
 define('GERMANY_DRAWS', 0);
 define('GERMANY_BNS', 0);
-define('SPAIN_WINS', 0);
+define('SPAIN_WINS', 3);
 define('SPAIN_DRAWS', 0);
-define('SPAIN_BNS', 0);
+define('SPAIN_BNS', 1);
 
 #TEAM 2
 define('ENGLAND_WINS', 0);
@@ -179,6 +179,23 @@ define('BJARNASON_GOALS', 0);
 define('BJARNASON_BNS', 0);
 
 
+define('T1', serialize(array(FRANCE, GERMANY, SPAIN)));
+define('T2', serialize(array(ENGLAND, BELGIUM, ITALY, PORTUGAL)));
+define('T3', serialize(array(CROATIA, AUSTRIA, SWITZERLAND)));
+define('T4', serialize(array(WALES, ICELAND, RUSSIA, POLAND)));
+define('T5', serialize(array(CZECH, SWEDEN, TURKEY, UKRAINE)));
+define('T6', serialize(array(REPUBLIC, ROMANIA, SLOVAKIA)));
+define('T7', serialize(array(HUNGARY, NORTHERN, ALBANIA)));
+
+define('P1', serialize(array(MULLER, RONALDO, GRIEZMANN)));
+define('P2', serialize(array(GIROUD, LEWANDOWSKI, KANE)));
+define('P3', serialize(array(LUKAKU, MARTIAL, MORATA, IBRAHIMOVIC)));
+define('P4', serialize(array(PELLE, GOTZE, VARDY, ADURIZ)));
+define('P5', serialize(array(HAZARD, GIGNAC, STURRIDGE, MANDZUKIC)));
+define('P6', serialize(array(GOMEZ, ROONEY, BRUYNE, BALE)));
+define('P7', serialize(array(ZAZA, DZYUBA, SHAQIRI, JANKO)));
+define('P8', serialize(array(KOKORIN, YARMOLENKO, YILMAZ)));
+define('P9', serialize(array(NECID, HAMSIK, BJARNASON)));
 
 define('FRANCE', serialize(array(FRANCE_WINS, FRANCE_DRAWS, FRANCE_BNS)));
 define('GERMANY', serialize(array(GERMANY_WINS, GERMANY_DRAWS, GERMANY_BNS)));

@@ -32,7 +32,6 @@ function poolcalculator_menu() {
 		'access arguments' => array('Access pool calculator admin'),
 	);
 
-
 	$items['pool/info'] = array(
 		'title' => 'Welcome',
 		'description' => 'Instructions and Rules',
@@ -40,8 +39,66 @@ function poolcalculator_menu() {
 		'access callback' => true,
 	);
 
+	$items['teamgroup'] = array(
+		'title' => 'Group Standings',
+		'description' => 'Team Group Standings',
+  	'page callback' => 'poolcalculator_teamGroupStandings',
+		'access callback' => true,
+	);
+
+	$items['playergroup'] = array(
+		'title' => 'Group Standings',
+		'description' => 'Player Group Standings',
+  	'page callback' => 'poolcalculator_playerGroupStandings',
+		'access callback' => true,
+	);
+
 	return $items;
 
+}
+
+function poolcalculator_teamGroupStandings($gid) {
+	
+	module_load_include('inc', 'poolcalculator', 'poolcalculator.stats');
+
+	$group = poolcalculator_getSelectionArray(constant($gid));
+	$out = '<div><table><th>PICK</th><th>WINS</th><th>DRAWS</th><th>BONUS</th><th>POINTS</th>';
+
+	foreach($group as $i => $g) {
+		$out .= '<tr><td>'.$g.'</td>';
+		$out .= '<td>'.poolcalculator_getTeamWins(constant($g)).'</td>';
+		$out .= '<td>'.poolcalculator_getTeamDraws_NumORPoints(constant($g)).'</td>';
+		$out .= '<td>'.poolcalculator_getTeamBonusPoints(constant($g)).'</td>';
+		$out .= '<td>'.poolcalculator_getTeamTotalPoints(constant($g)).'</td>';
+		$out .= '</tr>';
+	}
+
+	$out .= '</table></div>';
+	return $out;	
+}
+
+function poolcalculator_playerGroupStandings($gid) {
+	
+	module_load_include('inc', 'poolcalculator', 'poolcalculator.stats');
+
+	$group = poolcalculator_getSelectionArray(constant($gid));
+	$out = '<div><table><th>PICK</th><th>GOALS</th><th>BONUS</th><th>POINTS</th>';
+
+	foreach($group as $i => $g) {
+		$out .= '<tr><td>'.$g.'</td>';
+		$out .= '<td>'.poolcalculator_getPlayerGoals(constant($g)).'</td>';
+		$out .= '<td>'.poolcalculator_getPlayerBonusPoints(constant($g)).'</td>';
+		$out .= '<td>'.poolcalculator_getPlayerTotalPoints(constant($g)).'</td>';
+		$out .= '</tr>';
+	}
+
+	$out .= '</table></div>';
+	return $out;	
+}
+
+function poolcalculator_GroupTitle($gid) {
+	echo '<xmp>'.$gid.'</xmp>';
+	return 'Group '.$gid.' Standings';
 }
 
 function poolcalculator_info() {
