@@ -3,7 +3,7 @@
 define('LAST_UPDATE', 'No updates yet... tourney hasn\'t started...');
 
 define('TEAM_POTS', 7);
-define('PLAYER_POTS', 2);
+define('PLAYER_POTS', 9);
 
 # TEAM 1
 define('FRANCE_WINS', 0);
