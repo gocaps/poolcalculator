@@ -2,3 +2,10 @@
 table.pool {
 	margin-bottom: 0px !important;
 }
+
+div.standings.closed div.standings-grid {
+	display: none;
+}
+div.standings.open div.standings-grid {
+	display: block;
+}

@@ -137,6 +137,9 @@ function poolcalculator_calcEntryPoints($entry) {
 	
 	$table['link'] = 'node/'.$entry->nid;
 	$table['total'] = $selection_total_pts;
+
+	$user = user_load($entry->uid);
+	$table['owner'] = $user->field_full_name['und'][0]['value'];
 	
 	return $table;	
 }
@@ -188,8 +191,8 @@ function poolcalculator_formatResults($stats, $rank) {
 	$out = '';
 	foreach($rank as $team_name => $tot) {
 
-		$out .= '<div><table class="pool"><th>'.l($team_name, $stats[$team_name]['link']).'</th><th><strong>POINTS: '.$tot.'</strong></th></table>';
-		$out .= '<table><tr><th>GROUP</th><th>PICK</th><th>WINS/GOALS</th><th>DRAWS</th><th>BONUS</th><th>PTS</th></tr>';	
+		$out .= '<div class="standings closed"><div class="standings-head"><table class="pool"><th>'.$team_name.'</th><th><strong>POINTS: '.$tot.'</strong></th><th>'.$stats[$team_name]['owner'].'</th></table></div>';
+		$out .= '<div class="standings-grid"><table><tr><th>GROUP</th><th>PICK</th><th>WINS/GOALS</th><th>DRAWS</th><th>BONUS</th><th>PTS</th></tr>';	
 
 		foreach($stats[$team_name] as $i => $arr) {
 			if(is_numeric($i)) {
@@ -197,19 +200,27 @@ function poolcalculator_formatResults($stats, $rank) {
 				if(substr($arr[0], 0, 1) === 'P') {
 				  array_splice($arr, 3, 0, '-');
 				}
-				foreach($arr as $vals) $out .= '<td>'.poolcalculator_formatTeamName($vals).'</td>';
+				foreach($arr as $vals) $out .= '<td>'.poolcalculator_formatCellContent($vals).'</td>';
 				$out .= '</tr>';
 			}
 		}		
-		$out .= '</table></div>';
+		$out .= '</table></div></div>';
 	}	
 	return $out;
 }
 
-function poolcalculator_formatTeamName($name) {
+function poolcalculator_formatCellContent($name) {
 
 	$check = $name.'_FORMATTED';
 	if(defined($check)) return constant($check);
+
+	elseif((strlen($name)==2) && (substr($name, 0, 1) === 'T')) {
+			return l($name, '/teamgroup/'.$name);
+	}
+	elseif((strlen($name)==2) && (substr($name, 0, 1) === 'P')) {
+			return l($name, '/playergroup/'.$name);
+	}
+
 	return $name;
 }
 
