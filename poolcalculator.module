@@ -120,7 +120,7 @@ function poolcalculator_info() {
 	$out .= '<h3>Instructions</h3>';
 	$out .= '<ul><li>Login</li>';
 	$out .= '<li>Click "Add Content" (under Navigation), and fill out form.</li>';
-	$out .= '<li>Check this site for standings</li>';
+	$out .= '<li>Once you click Save you cannot edit your team.  If you need to edit, let me know.</li>';
 		
 	return $out;
 
