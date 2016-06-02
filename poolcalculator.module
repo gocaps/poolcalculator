@@ -22,7 +22,7 @@ function poolcalculator_menu() {
 		'title' => 'STANDINGS',
 		'description' => 'Shows the current standings',
   	'page callback' => 'poolcalculator_showStandings',
-		'access arguments' => array('View published content'),
+		'access arguments' => array('access content'),
 	);
 
 	$items['admin/pool/debug'] = array(
@@ -52,7 +52,11 @@ function poolcalculator_info() {
 	$out .= '<a href="http://bit.ly/europool2016">http://bit.ly/europool2016</a>';
 
 	$out .= '<h3>Rules</h3>';
-	$out .= '<ul><li>Max 3 entries allowed per person</li>';
+	$out .= '<ul><li>Same point scoring as previous years:</li>';
+	$out .= '<ul><li>Team Brackets: 3 points per Win, 1 point per Draw</li>';
+	$out .= '<li>Player Brackets: 2 points per Goal</li>';
+	$out .= '<li>3 point bonus awarded to top point getter in each bracket</li></ul>';
+	$out .= '<li>Max 3 entries allowed per person</li>';
 	$out .= '<li>$10 per entry</li>';
 	$out .= '<li>Payout will depend on number of entries. Either winner-take-all, or will pay 2nd place if pot is over $100.</li></ul>';
 	
