@@ -62,7 +62,7 @@ function poolcalculator_info() {
 	
 	$out .= '<h3>Instructions</h3>';
 	$out .= '<ul><li>Login</li>';
-	$out .= '<li>Click "Add Content", and fill out form.</li>';
+	$out .= '<li>Click "Add Content" (under Navigation), and fill out form.</li>';
 	$out .= '<li>Check this site for standings</li>';
 		
 	return $out;
