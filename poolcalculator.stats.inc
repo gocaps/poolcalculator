@@ -11,15 +11,15 @@ define('CZECH_FORMATTED', 'CZECH REP');
 define('BRUYNE_FORMATTED', 'DE BRUYNE');
 
 # TEAM 1
-define('FRANCE_WINS', 1);
-define('FRANCE_DRAWS', 2);
+define('FRANCE_WINS', 0);
+define('FRANCE_DRAWS', 0);
 define('FRANCE_BNS', 0);
-define('GERMANY_WINS', 2);
+define('GERMANY_WINS', 0);
 define('GERMANY_DRAWS', 0);
 define('GERMANY_BNS', 0);
-define('SPAIN_WINS', 3);
+define('SPAIN_WINS', 0);
 define('SPAIN_DRAWS', 0);
-define('SPAIN_BNS', 1);
+define('SPAIN_BNS', 0);
 
 #TEAM 2
 define('ENGLAND_WINS', 0);

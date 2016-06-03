@@ -120,7 +120,7 @@ function poolcalculator_info() {
 	$out .= '<h3>Instructions</h3>';
 	$out .= '<ul><li>Login</li>';
 	$out .= '<li>Click "Add Content" (under Navigation), and fill out form.</li>';
-	$out .= '<li>Once you click Save you cannot edit your team.  If you need to edit, let me know.</li>';
+	$out .= '<li>You can create/edit your teams up until midnight on Thursday June 9th</li>';
 	$out .= '<li>Once the tournament starts, check back here for standings</li></ul>';
 		
 	return $out;
