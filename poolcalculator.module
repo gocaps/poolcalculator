@@ -115,7 +115,7 @@ function poolcalculator_info() {
 	$out .= '<li>3 point bonus awarded to top point getter in each bracket</li></ul>';
 	$out .= '<li>Max 3 entries allowed per person</li>';
 	$out .= '<li>$10 per entry</li>';
-	$out .= '<li>Payout will depend on number of entries. Either winner-take-all, or will pay 2nd place if pot is over $100.</li></ul>';
+	$out .= '<li>Payout: <strong>1st - $100&nbsp;&nbsp;&nbsp;2nd - $40</strong></li></ul>';
 	
 	$out .= '<h3>Instructions</h3>';
 	$out .= '<ul><li>Login</li>';

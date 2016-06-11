@@ -2,6 +2,9 @@
 table.pool {
 	margin-bottom: 0px !important;
 }
+.pool th {
+	width: 33%;
+}
 
 div.standings-grid {
 	padding-left: 10px;
