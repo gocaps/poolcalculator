@@ -1,6 +1,6 @@
 <?php
 
-define('LAST_UPDATE', 'No updates yet... tourney hasn\'t started...');
+define('LAST_UPDATE', 'June 21st, after early games');
 
 define('TEAM_POTS', 7);
 define('PLAYER_POTS', 9);
@@ -11,172 +11,228 @@ define('CZECH_FORMATTED', 'CZECH REP');
 define('BRUYNE_FORMATTED', 'DE BRUYNE');
 
 # TEAM 1
-define('FRANCE_WINS', 0);
-define('FRANCE_DRAWS', 0);
+define('FRANCE_WINS', 2);
+define('FRANCE_DRAWS', 1);
 define('FRANCE_BNS', 0);
-define('GERMANY_WINS', 0);
-define('GERMANY_DRAWS', 0);
+define('FRANCE_ELIM', 0);
+define('GERMANY_WINS', 2);
+define('GERMANY_DRAWS', 1);
 define('GERMANY_BNS', 0);
-define('SPAIN_WINS', 0);
+define('GERMANY_ELIM', 0);
+define('SPAIN_WINS', 2);
 define('SPAIN_DRAWS', 0);
 define('SPAIN_BNS', 0);
+define('SPAIN_ELIM', 0);
 
 #TEAM 2
-define('ENGLAND_WINS', 0);
-define('ENGLAND_DRAWS', 0);
+define('ENGLAND_WINS', 1);
+define('ENGLAND_DRAWS', 2);
 define('ENGLAND_BNS', 0);
-define('BELGIUM_WINS', 0);
+define('ENGLAND_ELIM', 0);
+define('BELGIUM_WINS', 1);
 define('BELGIUM_DRAWS', 0);
 define('BELGIUM_BNS', 0);
-define('ITALY_WINS', 0);
+define('BELGIUM_ELIM', 0);
+define('ITALY_WINS', 2);
 define('ITALY_DRAWS', 0);
 define('ITALY_BNS', 0);
+define('ITALY_ELIM', 0);
 define('PORTUGAL_WINS', 0);
-define('PORTUGAL_DRAWS', 0);
+define('PORTUGAL_DRAWS', 2);
 define('PORTUGAL_BNS', 0);
+define('PORTUGAL_ELIM', 0);
 
 #TEAM 3
-define('CROATIA_WINS', 0);
-define('CROATIA_DRAWS', 0);
+define('CROATIA_WINS', 1);
+define('CROATIA_DRAWS', 1);
 define('CROATIA_BNS', 0);
+define('CROATIA_ELIM', 0);
 define('AUSTRIA_WINS', 0);
-define('AUSTRIA_DRAWS', 0);
+define('AUSTRIA_DRAWS', 1);
 define('AUSTRIA_BNS', 0);
-define('SWITZERLAND_WINS', 0);
-define('SWITZERLAND_DRAWS', 0);
+define('AUSTRIA_ELIM', 0);
+define('SWITZERLAND_WINS', 1);
+define('SWITZERLAND_DRAWS', 2);
 define('SWITZERLAND_BNS', 0);
+define('SWITZERLAND_ELIM', 0);
 
 #TEAM 4
-define('WALES_WINS', 0);
+define('WALES_WINS', 2);
 define('WALES_DRAWS', 0);
 define('WALES_BNS', 0);
+define('WALES_ELIM', 0);
 define('RUSSIA_WINS', 0);
-define('RUSSIA_DRAWS', 0);
+define('RUSSIA_DRAWS', 1);
 define('RUSSIA_BNS', 0);
+define('RUSSIA_ELIM', 1);
 define('ICELAND_WINS', 0);
-define('ICELAND_DRAWS', 0);
+define('ICELAND_DRAWS', 2);
 define('ICELAND_BNS', 0);
-define('POLAND_WINS', 0);
-define('POLAND_DRAWS', 0);
+define('ICELAND_ELIM', 0);
+define('POLAND_WINS', 2);
+define('POLAND_DRAWS', 1);
 define('POLAND_BNS', 0);
+define('POLAND_ELIM', 0);
 
 #TEAM 5
 define('CZECH_WINS', 0);
-define('CZECH_DRAWS', 0);
+define('CZECH_DRAWS', 1);
 define('CZECH_BNS', 0);
+define('CZECH_ELIM', 0);
 define('SWEDEN_WINS', 0);
-define('SWEDEN_DRAWS', 0);
+define('SWEDEN_DRAWS', 1);
 define('SWEDEN_BNS', 0);
+define('SWEDEN_ELIM', 0);
 define('TURKEY_WINS', 0);
 define('TURKEY_DRAWS', 0);
 define('TURKEY_BNS', 0);
+define('TURKEY_ELIM', 0);
 define('UKRAINE_WINS', 0);
 define('UKRAINE_DRAWS', 0);
 define('UKRAINE_BNS', 0);
+define('UKRAINE_ELIM', 1);
 
 #TEAM 6
 define('REPUBLIC_WINS', 0);
-define('REPUBLIC_DRAWS', 0);
+define('REPUBLIC_DRAWS', 1);
 define('REPUBLIC_BNS', 0);
+define('REPUBLIC_ELIM', 0);
 define('ROMANIA_WINS', 0);
-define('ROMANIA_DRAWS', 0);
+define('ROMANIA_DRAWS', 1);
 define('ROMANIA_BNS', 0);
-define('SLOVAKIA_WINS', 0);
-define('SLOVAKIA_DRAWS', 0);
+define('ROMANIA_ELIM', 1);
+define('SLOVAKIA_WINS', 1);
+define('SLOVAKIA_DRAWS', 1);
 define('SLOVAKIA_BNS', 0);
+define('SLOVAKIA_ELIM', 0);
 
 #TEAM 7
-define('HUNGARY_WINS', 0);
-define('HUNGARY_DRAWS', 0);
+define('HUNGARY_WINS', 1);
+define('HUNGARY_DRAWS', 1);
 define('HUNGARY_BNS', 0);
-define('NORTHERN_WINS', 0);
+define('HUNGARY_ELIM', 0);
+define('NORTHERN_WINS', 1);
 define('NORTHERN_DRAWS', 0);
 define('NORTHERN_BNS', 0);
-define('ALBANIA_WINS', 0);
+define('NORTHERN_ELIM', 0);
+define('ALBANIA_WINS', 1);
 define('ALBANIA_DRAWS', 0);
 define('ALBANIA_BNS', 0);
+define('ALBANIA_ELIM', 0);
 
 #PLAYER 1
 define('MULLER_GOALS', 0);
 define('MULLER_BNS', 0);
+define('MULLER_ELIM', 0);
 define('RONALDO_GOALS', 0);
 define('RONALDO_BNS', 0);
-define('GRIEZMANN_GOALS', 0);
+define('RONALDO_ELIM', 0);
+define('GRIEZMANN_GOALS', 1);
 define('GRIEZMANN_BNS', 0);
+define('GRIEZMANN_ELIM', 0);
 
 #PLAYER 2
-define('GIROUD_GOALS', 0);
+define('GIROUD_GOALS', 1);
 define('GIROUD_BNS', 0);
+define('GIROUD_ELIM', 0);
 define('LEWANDOWSKI_GOALS', 0);
 define('LEWANDOWSKI_BNS', 0);
+define('LEWANDOWSKI_ELIM', 0);
 define('KANE_GOALS', 0);
 define('KANE_BNS', 0);
+define('KANE_ELIM', 0);
 
 #PLAYER 3
-define('LUKAKU_GOALS', 0);
+define('LUKAKU_GOALS', 2);
 define('LUKAKU_BNS', 0);
+define('LUKAKU_ELIM', 0);
 define('MARTIAL_GOALS', 0);
 define('MARTIAL_BNS', 0);
-define('MORATA_GOALS', 0);
+define('MARTIAL_ELIM', 0);
+define('MORATA_GOALS', 2);
 define('MORATA_BNS', 0);
+define('MORATA_ELIM', 0);
 define('IBRAHIMOVIC_GOALS', 0);
 define('IBRAHIMOVIC_BNS', 0);
+define('IBRAHIMOVIC_ELIM', 0);
 
 #PLAYER 4
-define('PELLE_GOALS', 0);
+define('PELLE_GOALS', 1);
 define('PELLE_BNS', 0);
+define('PELLE_ELIM', 0);
 define('GOTZE_GOALS', 0);
 define('GOTZE_BNS', 0);
-define('VARDY_GOALS', 0);
+define('GOTZE_ELIM', 0);
+define('VARDY_GOALS', 1);
 define('VARDY_BNS', 0);
+define('VARDY_ELIM', 0);
 define('ADURIZ_GOALS', 0);
 define('ADURIZ_BNS', 0);
+define('ADURIZ_ELIM', 0);
 
 #PLAYER 5
 define('HAZARD_GOALS', 0);
 define('HAZARD_BNS', 0);
+define('HAZARD_ELIM', 0);
 define('GIGNAC_GOALS', 0);
 define('GIGNAC_BNS', 0);
-define('STURRIDGE_GOALS', 0);
+define('GIGNAC_ELIM', 0);
+define('STURRIDGE_GOALS', 1);
 define('STURRIDGE_BNS', 0);
+define('STURRIDGE_ELIM', 0);
 define('MANDZUKIC_GOALS', 0);
 define('MANDZUKIC_BNS', 0);
+define('MANDZUKIC_ELIM', 0);
 
 #PLAYER 6
-define('GOMEZ_GOALS', 0);
+define('GOMEZ_GOALS', 1);
 define('GOMEZ_BNS', 0);
+define('GOMEZ_ELIM', 0);
 define('ROONEY_GOALS', 0);
 define('ROONEY_BNS', 0);
+define('ROONEY_ELIM', 0);
 define('BRUYNE_GOALS', 0);
 define('BRUYNE_BNS', 0);
-define('BALE_GOALS', 0);
+define('BRUYNE_ELIM', 0);
+define('BALE_GOALS', 3);
 define('BALE_BNS', 0);
+define('BALE_ELIM', 0);
 
 #PLAYER 7
 define('ZAZA_GOALS', 0);
 define('ZAZA_BNS', 0);
+define('ZAZA_ELIM', 0);
 define('DZYUBA_GOALS', 0);
 define('DZYUBA_BNS', 0);
+define('DZYUBA_ELIM', 1);
 define('SHAQIRI_GOALS', 0);
 define('SHAQIRI_BNS', 0);
+define('SHAQIRI_ELIM', 0);
 define('JANKO_GOALS', 0);
 define('JANKO_BNS', 0);
+define('JANKO_ELIM', 0);
 
 #PLAYER 8
 define('KOKORIN_GOALS', 0);
 define('KOKORIN_BNS', 0);
+define('KOKORIN_ELIM', 1);
 define('YARMOLENKO_GOALS', 0);
 define('YARMOLENKO_BNS', 0);
+define('YARMOLENKO_ELIM', 1);
 define('YILMAZ_GOALS', 0);
 define('YILMAZ_BNS', 0);
+define('YILMAZ_ELIM', 0);
 
 #PLAYER 9
-define('NECID_GOALS', 0);
+define('NECID_GOALS', 1);
 define('NECID_BNS', 0);
-define('HAMSIK_GOALS', 0);
+define('NECID_ELIM', 0);
+define('HAMSIK_GOALS', 1);
 define('HAMSIK_BNS', 0);
-define('BJARNASON_GOALS', 0);
+define('HAMSIK_ELIM', 0);
+define('BJARNASON_GOALS', 1);
 define('BJARNASON_BNS', 0);
+define('BJARNASON_ELIM', 0);
 
 
 define('T1', serialize(array(FRANCE, GERMANY, SPAIN)));

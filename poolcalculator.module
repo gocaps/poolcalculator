@@ -65,7 +65,9 @@ function poolcalculator_teamGroupStandings($gid) {
 	$out = '<div><table><th>PICK</th><th>WINS</th><th>DRAWS</th><th>BONUS</th><th>POINTS</th>';
 
 	foreach($group as $i => $g) {
-		$out .= '<tr><td>'.poolcalculator_formatCellContent($g).'</td>';
+		$elim = constant($g.'_ELIM');
+                $elim_class = ($elim)? 'elim': '';
+		$out .= '<tr><td class="'.$elim_class.'">'.poolcalculator_formatCellContent($g).'</td>';
 		$out .= '<td>'.poolcalculator_getTeamWins(constant($g)).'</td>';
 		$out .= '<td>'.poolcalculator_getTeamDraws_NumORPoints(constant($g)).'</td>';
 		$out .= '<td>'.poolcalculator_getTeamBonusPoints(constant($g)).'</td>';
@@ -85,7 +87,9 @@ function poolcalculator_playerGroupStandings($gid) {
 	$out = '<div><table><th>PICK</th><th>GOALS</th><th>BONUS</th><th>POINTS</th>';
 
 	foreach($group as $i => $g) {
-		$out .= '<tr><td>'.$g.'</td>';
+		$elim = constant($g.'_ELIM');
+                $elim_class = ($elim)? 'elim': '';
+		$out .= '<tr><td class="'.$elim_class.'">'.$g.'</td>';
 		$out .= '<td>'.poolcalculator_getPlayerGoals(constant($g)).'</td>';
 		$out .= '<td>'.poolcalculator_getPlayerBonusPoints(constant($g)).'</td>';
 		$out .= '<td>'.poolcalculator_getPlayerTotalPoints(constant($g)).'</td>';
@@ -131,24 +135,22 @@ function poolcalculator_debug() {
 
 	module_load_include('inc', 'poolcalculator', 'poolcalculator.stats');
 
-	$entries = poolcalculator_loadAllTeams();
-	$stats = array();
-	$rank = array();
+	$gid = 'P8';
+	$group = poolcalculator_getSelectionArray(constant($gid));
+        $out = '<div><table><th>PICK</th><th>GOALS</th><th>BONUS</th><th>POINTS</th>';
 
-	foreach($entries as $entry) {
-		$stats[$entry->title] = poolcalculator_calcEntryPoints($entry);
-		$rank[$entry->title] = $stats[$entry->title]['total'];
-	}
-	arsort($rank, SORT_NUMERIC);
-	
-	echo '<xmp>';
-	print_r($stats);
-	echo '</xmp>';
+        foreach($group as $i => $g) {
+                $elim = constant($g.'_ELIM');
+		$elim_class = ($elim)? 'elim': '';
+		$out .= '<tr><td class="'.$elim_class.'">'.$g.'</td>';
+                $out .= '<td>'.poolcalculator_getPlayerGoals(constant($g)).'</td>';
+                $out .= '<td>'.poolcalculator_getPlayerBonusPoints(constant($g)).'</td>';
+                $out .= '<td>'.poolcalculator_getPlayerTotalPoints(constant($g)).'</td>';
+                $out .= '</tr>';
+        }
 
-	echo '<xmp>';
-	print_r($rank);
-	echo '</xmp>';
-	return;	
+        $out .= '</table></div>';
+        return $out;	
 }
 
 function poolcalculator_showStandings() {
@@ -276,7 +278,7 @@ function poolcalculator_formatCellContent($name) {
 			return l($name, '/teamgroup/'.$name, array('attributes' => array('class' => 'grid-link', 'target' => '_blank')));
 	}
 	elseif((strlen($name)==2) && (substr($name, 0, 1) === 'P')) {
-			return l($name, '/playergroup/'.$name);
+			return l($name, '/playergroup/'.$name, array('attributes' => array('class' => 'grid-link', 'target' => '_blank')));
 	}
 
 	return $name;

@@ -6,6 +6,11 @@ table.pool {
 	width: 33%;
 }
 
+td.elim {
+	background-color: #66ccff;	
+}
+
+
 div.standings-grid {
 	padding-left: 10px;
 	padding-right: 10px;
