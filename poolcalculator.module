@@ -53,8 +53,32 @@ function poolcalculator_menu() {
 		'access callback' => true,
 	);
 
+	$items['allgroups'] = array(
+		'title' => 'Group Standings',
+		'description' => 'All Group Standings',
+  	'page callback' => 'poolcalculator_allGroupStandings',
+		'access callback' => true,
+	);
+
 	return $items;
 
+}
+
+function poolcalculator_allGroupStandings() {
+
+	$html = '';
+
+	for($i=1; $i<=TEAM_POTS; $i++) {
+		$grp = 'T'.$i;
+		$html .= poolcalculator_teamGroupStandings($grp);
+	}
+
+	for($j=1; $j<=PLAYER_POTS; $j++) {
+		$grp = 'P'.$j;
+		$html .= poolcalculator_playerGroupStandings($grp);
+	}
+
+	return $html;
 }
 
 function poolcalculator_teamGroupStandings($gid) {
