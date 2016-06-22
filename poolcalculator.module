@@ -65,7 +65,7 @@ function poolcalculator_menu() {
 }
 
 function poolcalculator_allGroupStandings() {
-
+	module_load_include('inc', 'poolcalculator', 'poolcalculator.stats');
 	$html = '';
 
 	for($i=1; $i<=TEAM_POTS; $i++) {
