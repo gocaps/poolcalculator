@@ -1,6 +1,6 @@
 <?php
 
-define('LAST_UPDATE', 'June 21st, after early games');
+define('LAST_UPDATE', 'June 22nd, end of day...');
 
 define('TEAM_POTS', 7);
 define('PLAYER_POTS', 9);
@@ -29,7 +29,7 @@ define('ENGLAND_WINS', 1);
 define('ENGLAND_DRAWS', 2);
 define('ENGLAND_BNS', 0);
 define('ENGLAND_ELIM', 0);
-define('BELGIUM_WINS', 1);
+define('BELGIUM_WINS', 2);
 define('BELGIUM_DRAWS', 0);
 define('BELGIUM_BNS', 0);
 define('BELGIUM_ELIM', 0);
@@ -38,19 +38,19 @@ define('ITALY_DRAWS', 0);
 define('ITALY_BNS', 0);
 define('ITALY_ELIM', 0);
 define('PORTUGAL_WINS', 0);
-define('PORTUGAL_DRAWS', 2);
+define('PORTUGAL_DRAWS', 3);
 define('PORTUGAL_BNS', 0);
 define('PORTUGAL_ELIM', 0);
 
 #TEAM 3
-define('CROATIA_WINS', 1);
+define('CROATIA_WINS', 2);
 define('CROATIA_DRAWS', 1);
 define('CROATIA_BNS', 0);
 define('CROATIA_ELIM', 0);
 define('AUSTRIA_WINS', 0);
 define('AUSTRIA_DRAWS', 1);
 define('AUSTRIA_BNS', 0);
-define('AUSTRIA_ELIM', 0);
+define('AUSTRIA_ELIM', 1);
 define('SWITZERLAND_WINS', 1);
 define('SWITZERLAND_DRAWS', 2);
 define('SWITZERLAND_BNS', 0);
@@ -65,7 +65,7 @@ define('RUSSIA_WINS', 0);
 define('RUSSIA_DRAWS', 1);
 define('RUSSIA_BNS', 0);
 define('RUSSIA_ELIM', 1);
-define('ICELAND_WINS', 0);
+define('ICELAND_WINS', 1);
 define('ICELAND_DRAWS', 2);
 define('ICELAND_BNS', 0);
 define('ICELAND_ELIM', 0);
@@ -78,22 +78,22 @@ define('POLAND_ELIM', 0);
 define('CZECH_WINS', 0);
 define('CZECH_DRAWS', 1);
 define('CZECH_BNS', 0);
-define('CZECH_ELIM', 0);
+define('CZECH_ELIM', 1);
 define('SWEDEN_WINS', 0);
 define('SWEDEN_DRAWS', 1);
 define('SWEDEN_BNS', 0);
-define('SWEDEN_ELIM', 0);
-define('TURKEY_WINS', 0);
+define('SWEDEN_ELIM', 1);
+define('TURKEY_WINS', 1);
 define('TURKEY_DRAWS', 0);
-define('TURKEY_BNS', 0);
-define('TURKEY_ELIM', 0);
+define('TURKEY_BNS', 1);
+define('TURKEY_ELIM', 1);
 define('UKRAINE_WINS', 0);
 define('UKRAINE_DRAWS', 0);
 define('UKRAINE_BNS', 0);
 define('UKRAINE_ELIM', 1);
 
 #TEAM 6
-define('REPUBLIC_WINS', 0);
+define('REPUBLIC_WINS', 1);
 define('REPUBLIC_DRAWS', 1);
 define('REPUBLIC_BNS', 0);
 define('REPUBLIC_ELIM', 0);
@@ -108,7 +108,7 @@ define('SLOVAKIA_ELIM', 0);
 
 #TEAM 7
 define('HUNGARY_WINS', 1);
-define('HUNGARY_DRAWS', 1);
+define('HUNGARY_DRAWS', 2);
 define('HUNGARY_BNS', 0);
 define('HUNGARY_ELIM', 0);
 define('NORTHERN_WINS', 1);
@@ -118,13 +118,13 @@ define('NORTHERN_ELIM', 0);
 define('ALBANIA_WINS', 1);
 define('ALBANIA_DRAWS', 0);
 define('ALBANIA_BNS', 0);
-define('ALBANIA_ELIM', 0);
+define('ALBANIA_ELIM', 1);
 
 #PLAYER 1
 define('MULLER_GOALS', 0);
 define('MULLER_BNS', 0);
 define('MULLER_ELIM', 0);
-define('RONALDO_GOALS', 0);
+define('RONALDO_GOALS', 2);
 define('RONALDO_BNS', 0);
 define('RONALDO_ELIM', 0);
 define('GRIEZMANN_GOALS', 1);
@@ -149,12 +149,12 @@ define('LUKAKU_ELIM', 0);
 define('MARTIAL_GOALS', 0);
 define('MARTIAL_BNS', 0);
 define('MARTIAL_ELIM', 0);
-define('MORATA_GOALS', 2);
+define('MORATA_GOALS', 3);
 define('MORATA_BNS', 0);
 define('MORATA_ELIM', 0);
 define('IBRAHIMOVIC_GOALS', 0);
 define('IBRAHIMOVIC_BNS', 0);
-define('IBRAHIMOVIC_ELIM', 0);
+define('IBRAHIMOVIC_ELIM', 1);
 
 #PLAYER 4
 define('PELLE_GOALS', 1);
@@ -210,7 +210,7 @@ define('SHAQIRI_BNS', 0);
 define('SHAQIRI_ELIM', 0);
 define('JANKO_GOALS', 0);
 define('JANKO_BNS', 0);
-define('JANKO_ELIM', 0);
+define('JANKO_ELIM', 1);
 
 #PLAYER 8
 define('KOKORIN_GOALS', 0);
@@ -219,14 +219,14 @@ define('KOKORIN_ELIM', 1);
 define('YARMOLENKO_GOALS', 0);
 define('YARMOLENKO_BNS', 0);
 define('YARMOLENKO_ELIM', 1);
-define('YILMAZ_GOALS', 0);
-define('YILMAZ_BNS', 0);
-define('YILMAZ_ELIM', 0);
+define('YILMAZ_GOALS', 1);
+define('YILMAZ_BNS', 1);
+define('YILMAZ_ELIM', 1);
 
 #PLAYER 9
 define('NECID_GOALS', 1);
 define('NECID_BNS', 0);
-define('NECID_ELIM', 0);
+define('NECID_ELIM', 1);
 define('HAMSIK_GOALS', 1);
 define('HAMSIK_BNS', 0);
 define('HAMSIK_ELIM', 0);

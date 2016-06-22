@@ -328,7 +328,7 @@ function poolcalculator_getPlayerGoals($player) {
 
 function poolcalculator_getPlayerBonusPoints($player) {
 	$ply_array = poolcalculator_getSelectionArray($player);
-	return $ply_array[1];
+	return $ply_array[1]*3;
 }
 
 function poolcalculator_getPlayerGoalPoints($player) {
