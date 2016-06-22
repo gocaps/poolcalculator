@@ -1,0 +1,18 @@
+TODO List
+
+- Make everything derive from a properly configured content type
+
+- Admin screens
+	- Generate pool from content type picker (wipes old pool away)
+		- Button with confirmation 
+	- Stats entry page from content type selections
+	- Point system page - for custom scoring
+
+- Navigation Menu
+	- standings (done)
+	- individual group standings (done)
+	- all groups (done)
+
+- Convert code from reading constants to reading from database
+
+- Convert code from hard coded scoring system to reading from database
