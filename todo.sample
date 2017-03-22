@@ -1,0 +1,28 @@
+<?php
+
+###############################################################################################
+#          - FRANCE -         ###        - GERMANY -          ###         - SPAIN -           #
+# WINS | DRAWS | BONUS | ELIM ### WINS | DRAWS | BONUS | ELIM ### WINS | DRAWS | BONUS | ELIM #
+#------|-------|-------|------###------|-------|-------|------###------|-------|-------|------#
+ $a1=2; $a2=1;  $a3=0;  $a4=0;   $b1=2; $b2=1;  $b3=0;  $b4=1;   $c1=2; $c2=0;  $c3=0;  $c4=1;
+###############################################################################################
+#         - ENGLAND -         ###        - BELGIUM -          ###         - ITALY -           #
+# WINS | DRAWS | BONUS | ELIM ### WINS | DRAWS | BONUS | ELIM ### WINS | DRAWS | BONUS | ELIM #
+#------|-------|-------|------###------|-------|-------|------###------|-------|-------|------#
+ $d1=2; $d2=1;  $d3=0;  $d4=0;   $e1=2; $e2=1;  $e3=0;  $e4=1;   $f1=2; $f2=0;  $f3=0;  $f4=1;
+###############################################################################################
+
+
+
+define('FRANCE_WINS', $a1);
+define('FRANCE_DRAWS', $a2);
+define('FRANCE_BNS', $a3);
+define('FRANCE_ELIM', $a4);
+define('GERMANY_WINS', $b1);
+define('GERMANY_DRAWS', $b2);
+define('GERMANY_BNS', $b3);
+define('GERMANY_ELIM', $b4);
+define('SPAIN_WINS', $c1);
+define('SPAIN_DRAWS', $c2);
+define('SPAIN_BNS', $c3);
+define('SPAIN_ELIM', $c4);
